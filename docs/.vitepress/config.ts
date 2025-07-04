@@ -57,8 +57,7 @@ export default defineConfig({
       link: '/en/',
       themeConfig: {
         nav: [
-          { text: 'Home', link: '/en/' },
-          { text: 'Workflows', link: '/en/workflows' }
+          { text: 'Home', link: '/en/' }
         ],
         sidebar: {},
         footer: {
