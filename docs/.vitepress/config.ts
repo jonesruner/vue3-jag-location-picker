@@ -7,8 +7,8 @@ export default defineConfig({
   // 确保输出到正确的目录
   outDir: '.vitepress/dist',
   
-  // 如果仓库名不是 vue3-jag-location-picker，请修改这个base路径
-  // base: '/vue3-jag-location-picker/',
+  // GitHub Pages 配置 - 仓库名为 vue3-jag-location-picker
+  base: '/vue3-jag-location-picker/',
   
   themeConfig: {
     siteTitle: false,

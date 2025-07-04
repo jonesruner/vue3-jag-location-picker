@@ -37,6 +37,13 @@ jobs:
       - name: Build documentation
         run: pnpm run docs:build
         
+      - name: Verify build output
+        run: |
+          echo "📁 Build directory contents:"
+          ls -la docs/.vitepress/dist/
+          echo "📄 Index file exists:"
+          test -f docs/.vitepress/dist/index.html && echo "✅ index.html found" || echo "❌ index.html missing"
+        
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
