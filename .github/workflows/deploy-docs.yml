@@ -57,6 +57,17 @@ jobs:
       - name: Build documentation
         run: pnpm run docs:build
         
+      - name: Verify documentation build
+        run: |
+          if [ ! -d "docs/.vitepress/dist" ]; then
+            echo "❌ Documentation build failed - dist directory not found"
+            exit 1
+          fi
+          echo "✅ Documentation built successfully"
+          ls -la docs/.vitepress/dist/
+          echo "📁 Build contents:"
+          find docs/.vitepress/dist -type f -name "*.html" | head -10
+        
       - name: Setup Pages
         uses: actions/configure-pages@v4
         

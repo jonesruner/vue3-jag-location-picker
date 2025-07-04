@@ -4,6 +4,12 @@ export default defineConfig({
   title: 'Vue3 Jag Location Picker',
   description: 'A Vue 3 location picker component supporting both Google Maps and AMap (高德地图)',
   
+  // 确保输出到正确的目录
+  outDir: '.vitepress/dist',
+  
+  // 如果仓库名不是 vue3-jag-location-picker，请修改这个base路径
+  // base: '/vue3-jag-location-picker/',
+  
   themeConfig: {
     siteTitle: false,
     
@@ -51,7 +57,8 @@ export default defineConfig({
       link: '/en/',
       themeConfig: {
         nav: [
-          { text: 'Home', link: '/en/' }
+          { text: 'Home', link: '/en/' },
+          { text: 'Workflows', link: '/en/workflows' }
         ],
         sidebar: {},
         footer: {
