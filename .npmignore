@@ -1,0 +1,55 @@
+# Source files
+src/
+public/
+index.html
+src/views/
+
+# Development files
+.vscode/
+.idea/
+*.log
+*.tsbuildinfo
+
+# Build tools
+vite.config.ts
+tsconfig.json
+tsconfig.*.json
+
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+CHANGELOG.md
+
+# Examples
+examples/
+
+# Testing
+coverage/
+*.test.js
+*.test.ts
+*.spec.js
+*.spec.ts
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db 

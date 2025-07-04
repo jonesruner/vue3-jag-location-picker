@@ -1,0 +1,403 @@
+/* Vue3 AG Location Picker Styles */
+
+.location-picker {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.location-picker .top-controls {
+  padding: 12px;
+}
+
+.location-picker .top-controls .input-row {
+  display: flex;
+  gap: 12px;
+}
+
+.location-picker .top-controls .input-row .search-section {
+  flex: 1;
+  position: relative;
+}
+
+.location-picker .top-controls .input-row .search-section .search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.location-picker .top-controls .input-row .search-section .search-input-wrapper .search-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.location-picker .top-controls .input-row .search-section .search-input-wrapper .search-input::placeholder {
+  color: #6c757d;
+}
+
+.location-picker .top-controls .input-row .search-section .search-input-wrapper .search-btn {
+  padding: 10px 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.location-picker .top-controls .input-row .search-section .search-input-wrapper .search-btn:hover {
+  background: #0056b3;
+}
+
+.location-picker .top-controls .input-row .search-section .search-input-wrapper .search-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.location-picker .top-controls .input-row .search-section .search-input-wrapper .search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.location-picker .top-controls .input-row .search-section .search-results .search-result-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.location-picker .top-controls .input-row .search-section .search-results .search-result-item:last-child {
+  border-bottom: none;
+}
+
+.location-picker .top-controls .input-row .search-section .search-results .search-result-item:hover {
+  background: #f8f9fa;
+}
+
+.location-picker .top-controls .input-row .search-section .search-results .search-result-item .result-name {
+  font-weight: 500;
+  margin-bottom: 2px;
+  color: #212529;
+}
+
+.location-picker .top-controls .input-row .search-section .search-results .search-result-item .result-address {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.location-picker .top-controls .input-row .search-section .search-results .search-results-count {
+  padding: 8px 12px;
+  font-size: 11px;
+  color: #6c757d;
+  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  text-align: center;
+}
+
+.location-picker .top-controls .input-row .coordinate-section {
+  min-width: 280px;
+}
+
+.location-picker .top-controls .input-row .coordinate-section .coordinate-inputs {
+  display: flex;
+  gap: 8px;
+}
+
+.location-picker .top-controls .input-row .coordinate-section .coordinate-inputs .coordinate-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #f8f9fa;
+}
+
+.location-picker .top-controls .input-row .coordinate-section .coordinate-inputs .coordinate-input:focus {
+  outline: none;
+  border-color: #007bff;
+  background: #fff;
+}
+
+.location-picker .top-controls .input-row .coordinate-section .coordinate-inputs .coordinate-input::placeholder {
+  color: #6c757d;
+}
+
+.location-picker .top-controls .input-row .coordinate-section .coordinate-inputs .coordinate-btn {
+  padding: 10px 16px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.location-picker .top-controls .input-row .coordinate-section .coordinate-inputs .coordinate-btn:hover {
+  background: #218838;
+}
+
+.location-picker .top-controls .input-row .coordinate-section .coordinate-inputs .coordinate-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.location-picker .map-wrapper {
+  position: relative;
+}
+
+.location-picker .map-wrapper .map-container {
+  width: 100%;
+}
+
+.location-picker .map-wrapper .map-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 16px;
+  border-radius: 6px;
+  color: #6c757d;
+}
+
+.location-picker .map-wrapper .map-loading .loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.location-picker .info-panel {
+  background: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+.location-picker .info-panel .info-content {
+  padding: 12px;
+}
+
+.location-picker .info-panel .info-content .coordinate-info {
+  margin-bottom: 12px;
+}
+
+.location-picker .info-panel .info-content .coordinate-info .coordinate-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6c757d;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.location-picker .info-panel .info-content .coordinate-info .coordinate-value {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.location-picker .info-panel .info-content .coordinate-info .coordinate-value .coordinate-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.location-picker .info-panel .info-content .coordinate-info .coordinate-value .coordinate-item .coordinate-type {
+  font-size: 12px;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.location-picker .info-panel .info-content .coordinate-info .coordinate-value .coordinate-item .coordinate-number {
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 13px;
+  color: #495057;
+  font-weight: 500;
+}
+
+.location-picker .info-panel .info-content .address-info {
+  margin-bottom: 12px;
+}
+
+.location-picker .info-panel .info-content .address-info .address-value {
+  font-size: 14px;
+  color: #212529;
+  line-height: 1.4;
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.location-picker .info-panel .info-content .address-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #e3f2fd;
+  border-radius: 6px;
+  border: 1px solid #bbdefb;
+}
+
+.location-picker .info-panel .info-content .address-placeholder .placeholder-icon {
+  font-size: 16px;
+}
+
+.location-picker .info-panel .info-content .address-placeholder .placeholder-text {
+  font-size: 13px;
+  color: #1976d2;
+}
+
+.location-picker .info-panel .info-content .initial-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  text-align: center;
+  justify-content: center;
+}
+
+.location-picker .info-panel .info-content .initial-placeholder .placeholder-icon {
+  font-size: 18px;
+}
+
+.location-picker .info-panel .info-content .initial-placeholder .placeholder-text {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.location-picker .info-panel .info-content .debug-section {
+  margin-top: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.location-picker .info-panel .info-content .debug-section summary {
+  padding: 8px 12px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.location-picker .info-panel .info-content .debug-section .debug-content {
+  padding: 12px;
+  background: #fff;
+  font-size: 11px;
+  font-family: monospace;
+  color: #495057;
+}
+
+.location-picker .info-panel .info-content .debug-section .debug-content div {
+  margin-bottom: 4px;
+}
+
+.location-picker .info-panel .action-buttons {
+  padding: 12px;
+  border-top: 1px solid #dee2e6;
+}
+
+.location-picker .info-panel .action-buttons .action-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.location-picker .info-panel .action-buttons .action-btn .loading-icon {
+  animation: spin 1s linear infinite;
+}
+
+.location-picker .info-panel .action-buttons .action-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.location-picker .info-panel .action-buttons .action-btn.primary-btn {
+  background: #007bff;
+  color: white;
+}
+
+.location-picker .info-panel .action-buttons .action-btn.primary-btn:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.location-picker .error-message {
+  margin: 12px;
+  padding: 10px 12px;
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .location-picker .top-controls .input-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .location-picker .top-controls .input-row .coordinate-section {
+    min-width: auto;
+  }
+
+  .location-picker .info-panel .info-content .coordinate-info .coordinate-value {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .location-picker .info-panel .info-content .coordinate-info .coordinate-value .coordinate-item {
+    justify-content: space-between;
+  }
+} 
